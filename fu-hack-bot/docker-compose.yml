@@ -1,0 +1,15 @@
+services:
+  gpb-gpt-hack-bot:
+    image: gpb-gpt-hack-bot
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: gpb-gpt-hack-bot
+    env_file:
+      - .env
+    logging:
+      options:
+        max-size: 100mb
+        max-file: 2
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
